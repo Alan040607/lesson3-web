@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог товаров | Магазин электроники</title>
+    <link rel="stylesheet" href="dz2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Шапка сайта -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-laptop-code"></i>
+                </div>
+                <div class="logo-text">
+                    <h1>HSE</h1>
+                    <p>Магазин электроники</p>
+                </div>
+            </div>
+            
+            <div class="search-container">
+                <label for="search" class="sr-only">Поиск товаров</label>
+                <input type="text" id="search" class="search-input" placeholder="Поиск товаров...">
+
+            </div>
+        </div>
+    </header>
+    <!-- Основное содержимое -->
+    <main class="container">
+        <!-- Кнопка для мобильных устройств для отображения фильтров -->
+        <button class="mobile-filter-toggle" id="filterToggle" aria-expanded="false" aria-controls="sidebar">
+            <i class="fas fa-filter"></i> Фильтры
+        </button>
+        <div class="main-layout">
+            <!-- Боковая панель с фильтрами -->
+            <aside id="sidebar">
+                <div class="sidebar-header">
+                    <h2>Фильтры</h2>
+                    <button class="clear-filters">Сбросить</button>
+                </div>
+                <div class="filter-group">
+                    <h3>Категории</h3>
+                    <ul class="filter-options">
+                        <li class="filter-option">
+                            <input type="checkbox" id="category1" name="category" checked>
+                            <label for="category1">Ноутбуки</label>
+                        </li>
+                        <li class="filter-option">
+                            <input type="checkbox" id="category2" name="category">
+                            <label for="category2">Смартфоны</label>
+                        </li>
+                        <li class="filter-option">
+                            <input type="checkbox" id="category3" name="category">
+                            <label for="category3">Планшеты</label>
+                        </li>
+                        <li class="filter-option">
+                            <input type="checkbox" id="category4" name="category">
+                            <label for="category4">Аксессуары</label>
+                        </li>
+                        <li class="filter-option">
+                            <input type="checkbox" id="category5" name="category">
+                            <label for="category5">Наушники</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filter-group">
+                    <h3>Цена, руб.</h3>
+                    <div class="price-range">
+                        <div class="price-range-values">
+                            <span id="minPrice">0</span>
+                            <span id="maxPrice">50000</span>
+                        </div>
+                        <input type="range" min="0" max="50000" value="25000" class="range-slider" id="priceRange">
+                    </div>
+                </div>
+                <div class="filter-group">
+                    <h3>Бренд</h3>
+                    <ul class="filter-options">
+                        <li class="filter-option">
+                            <input type="checkbox" id="brand1" name="brand" checked>
+                            <label for="brand1">Apple</label>
+                        </li>
+                        <li class="filter-option">
+                            <input type="checkbox" id="brand2" name="brand">
+                            <label for="brand2">Samsung</label>
+                        </li>
+                        <li class="filter-option">
+                            <input type="checkbox" id="brand3" name="brand">
+                            <label for="brand3">Xiaomi</label>
+                        </li>
+                        <li class="filter-option">
+                            <input type="checkbox" id="brand4" name="brand">
+                            <label for="brand4">Lenovo</label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="filter-group">
+                    <h3>Рейтинг</h3>
+                    <ul class="filter-options">
+                        <li class="filter-option">
+                            <input type="checkbox" id="rating1" name="rating">
+                            <label for="rating1">4+ звезды</label>
+                        </li>
+                        <li class="filter-option">
+                            <input type="checkbox" id="rating2" name="rating" checked>
+                            <label for="rating2">3+ звезды</label>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <!-- Основная область контента -->
+            <div class="content-area">
+                <div class="content-header">
+                    <h2>Каталог товаров</h2>
+                    <div class="sort-container">
+                        <label for="sort">Сортировка:</label>
+                        <select class="sort-select" id="sort">
+                            <option value="popular">По популярности</option>
+                            <option value="price-asc">По возрастанию цены</option>
+                            <option value="price-desc">По убыванию цены</option>
+                            <option value="new">Сначала новые</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="products-grid">
+                    <!-- Карточка товара 1 -->
+                     <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://avatars.mds.yandex.net/get-marketpic/8552185/pice5a0db2261633397a08b8b6b4540fe81/orig" alt="Ноутбук Apple MacBook Pro 16">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Ноутбук MacBook Pro 16"</h3>
+                            <p class="product-description">Мощный ноутбук с процессором M2 Pro, 32 ГБ оперативной памяти и 1 ТБ SSD. Идеален для профессиональной работы.</p>
+                            <div class="product-footer">
+                                <div class="product-price">189 990 ₽</div>
+                                <button class="buy-button" aria-label="Купить ноутбук MacBook Pro 16">Купить</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Карточка товара 2 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://avatars.mds.yandex.net/get-marketpic/11400240/pic684cb2e797863c18aea817b6d736bcca/orig" alt="Смартфон iPhone 14 Pro в руке на фоне природы">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">iPhone 14 Pro 256GB</h3>
+                            <p class="product-description">Флагманский смартфон с динамическим островом, камерой 48 Мп и процессором A16 Bionic. Цвет: Deep Purple.</p>
+                            <div class="product-footer">
+                                <div class="product-price">119 990 ₽</div>
+                                <button class="buy-button" aria-label="Купить iPhone 14 Pro 256GB">Купить</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Карточка товара 3 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://avatars.mds.yandex.net/get-mpic/15434382/2a0000019716c3275d23d506e03adbf228d5/orig" alt="Умные часы Apple Watch Series 8 на руке">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Apple Watch Series 8</h3>
+                            <p class="product-description">Умные часы с датчиком температуры, всегда включенным дисплеем и функциями для здоровья и фитнеса.</p>
+                            <div class="product-footer">
+                                <div class="product-price">39 990 ₽</div>
+                                <button class="buy-button" aria-label="Купить Apple Watch Series 8">Купить</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Карточка товара 4 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://avatars.mds.yandex.net/get-mpic/4907979/img_id424599540290431068.jpeg/orig" alt="Наушники Sony WH-1000XM4 на столе">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Наушники Sony WH-1000XM4</h3>
+                            <p class="product-description">Беспроводные наушники с шумоподавлением, временем работы до 30 часов и премиальным звуком.</p>
+                            <div class="product-footer">
+                                <div class="product-price">24 990 ₽</div>
+                                <button class="buy-button" aria-label="Купить наушники Sony WH-1000XM4">Купить</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Карточка товара 5 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://www.ixbt.com/img/n1/news/2021/4/0/deuppy9cbcz61_large.jpg" alt="Планшет iPad Pro на столе рядом с карандашом">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">iPad Pro 12.9" 2022</h3>
+                            <p class="product-description">Планшет с дисплеем Liquid Retina XDR, процессором M2 и поддержкой Apple Pencil 2-го поколения.</p>
+                            <div class="product-footer">
+                                <div class="product-price">109 990 ₽</div>
+                                <button class="buy-button" aria-label="Купить iPad Pro 12.9 2022">Купить</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Карточка товара 6 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://avatars.mds.yandex.net/get-mpic/4497593/img_id8918928135891664794.jpeg/orig" alt="Ноутбук Dell XPS 13 на деревянном столе">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Ноутбук Dell XPS 13</h3>
+                            <p class="product-description">Ультрабук с безрамочным дисплеем InfinityEdge, процессором Intel Core i7 и оперативной памятью 16 ГБ.</p>
+                            <div class="product-footer">
+                                <div class="product-price">89 990 ₽</div>
+                                <button class="buy-button" aria-label="Купить ноутбук Dell XPS 13">Купить</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Карточка товара 7 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://avatars.mds.yandex.net/get-mpic/12476287/2a0000019473a9d85623b80e9f67cd97d38e/orig" alt="Беспроводная клавиатура и мышь Logitech на столе">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">Комплект Logitech MX</h3>
+                            <p class="product-description">Беспроводные клавиатура и мышь премиум-класса с возможностью работы на трех устройствах.</p>
+                            <div class="product-footer">
+                                <div class="product-price">15 990 ₽</div>
+                                <button class="buy-button" aria-label="Купить комплект Logitech MX">Купить</button>
+                            </div>
+                        </div>
+                    </article>
+                    <!-- Карточка товара 8 -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="https://avatars.mds.yandex.net/get-mpic/4615030/2a00000191c82f9cddbcc4f589e4e8664dee/orig" alt="Игровая консоль PlayStation 5 на черном фоне">
+                        </div>
+                        <div class="product-content">
+                            <h3 class="product-title">PlayStation 5</h3>
+                            <p class="product-description">Игровая консоль нового поколения с поддержкой 4K, трассировкой лучей и SSD-накопителем.</p>
+                            <div class="product-footer">
+                                <div class="product-price">59 990 ₽</div>
+                                <button class="buy-button" aria-label="Купить PlayStation 5">Купить</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- Подвал сайта -->
+    <footer>
+        <div class="container footer-container">
+            <div class="copyright">
+                <p>&copy; 2025 HSE. Все права защищены.</p>
+            </div>
+            <nav class="footer-links" aria-label="Дополнительные ссылки">
+                <a href="#">Политика конфиденциальности</a>
+                <a href="#">Условия использования</a>
+                <a href="#">Контакты</a>
+            </nav>
+        </div>
+    </footer>
+    <script>
+        // Переключение фильтров на мобильных устройствах
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterToggle = document.getElementById('filterToggle');
+            const sidebar = document.getElementById('sidebar');
+            if (filterToggle && sidebar) {
+                filterToggle.addEventListener('click', function() {
+                    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+                    this.setAttribute('aria-expanded', !isExpanded);
+                    sidebar.classList.toggle('active');
+                    // Меняем текст кнопки
+                    if (sidebar.classList.contains('active')) {
+                        this.innerHTML = '<i class="fas fa-times"></i> Скрыть фильтры';
+                    } else {
+                        this.innerHTML = '<i class="fas fa-filter"></i> Фильтры';
+                    }
+                });
+                // Закрытие фильтров при клике вне области
+                document.addEventListener('click', function(event) {
+                    if (window.innerWidth <= 639) {
+                        if (!sidebar.contains(event.target) && 
+                            !filterToggle.contains(event.target) && 
+                            sidebar.classList.contains('active')) {
+                            sidebar.classList.remove('active');
+                            filterToggle.setAttribute('aria-expanded', 'false');
+                            filterToggle.innerHTML = '<i class="fas fa-filter"></i> Фильтры';
+                        }
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
